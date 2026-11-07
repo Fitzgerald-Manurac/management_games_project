@@ -1,7 +1,7 @@
 # Management and Organization Concepts - Review Games
 
-Memory Match, Sliding Puzzle, Team Role Matching, Word Scramble at Hangman gamit ang pygame.
-Laman galing sa Lesson 1-4 (Nature of Management, Social Responsibility and
+Memory Match, Sliding Puzzle, Team Role Matching, Word Scramble and Hangman using pygame.
+Material from Lesson 1-4 (Nature of Management, Social Responsibility and
 Managerial Ethics, International Management and Globalization, Decision Making).
 
 ## Setup
@@ -62,8 +62,8 @@ Buksan ang `src/utils/data.py`:
 
 - `MEMORY_PAIRS`: `("Term", "Definition", lesson_number)`
 - `WORDS`: `("ANSWER", "Hint", lesson_number)`
-- `MANAGEMENT_SEQUENCE`: listahan ng 8 concepts para sa Sliding Puzzle (3x3 grid)
-- `ROLE_DEPARTMENTS`: listahan ng departamento para sa Team Role Matching
+- `MANAGEMENT_SEQUENCE`: List of 8 concepts for a sliding puzzle (3x3 grid)
+- `ROLE_DEPARTMENTS`: List of departments for Team Role Matching
 - `ROLE_TASKS`: `("Task", "Department", lesson_number)`
 
 ## Tests
