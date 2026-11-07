@@ -18,48 +18,29 @@ pip install -r requirements.txt
 python src/main.py
 ```
 
-Sa Windows, puwede ring i-double click ang `run_game.bat`.
+On Windows, you can also double-click `run_game.bat`.
 
-## Mga laro
+## Games
 
-- **Memory Match** - hanapin ang tamang term at definition pairs (8 pairs, 4x4 grid).
-  Nagsisimula sa 3 segundong peek sa lahat ng card bago bumaliktad; may flip animation,
-  `TERM`/`DEFINITION` na label, pulang border kapag mali ang pares at berdeng card kapag
-  tama. `10` puntos kada pares, `+5` kada sunod-sunod na tama (hanggang `+15`), at `+20`
-  bonus kapag 12 moves pababa ang natapos. May 2 `Hint` kada round (ipinapakita ang isang
-  pares pero nare-reset ang streak), progress bar, moves/time/streak HUD at best-moves
-  record.
-- **Sliding Puzzle** - ayusin ang mga concept ng Lesson 1 ayon sa tamang pagkakasunod-sunod
-  (`Management` -> levels of management mula sa itaas pababa -> apat na functions).
-  May numbered na step badge ang bawat tile, nagiging berde ito kapag nasa tamang
-  posisyon na, at may side panel na nagche-check kung ilan na ang tama (`In place: n/8`).
-  May bilang ng moves, timer at best-moves record; `25` puntos sa pag-solve + `15` bonus
-  kapag kulang sa 45 moves ang nagamit. May `Auto Solve` button pero walang score kapag
-  ginamit.
-- **Team Role Matching** - basahin ang gawain o empleyado, piliin ang departamentong dapat
-  humawak nito (Sales and Marketing, Finance, Operations, Human Resources, Information
-  Technology). May sariling logo ang bawat departamento. Tungkol sa Organizing,
-  Delegation at Structure; 8 task bawat round.
-- **Word Scramble** - i-type ang tamang sagot sa binurang salita.
-- **Hangman** - hulaan ang termino bago maubos ang tries.
+- **Memory Match** - Find the correct term and definition pairs (8 pairs, 4x4 grid). Starts with a 3-second peek at all cards before they flip over; features flip animations, `TERM`/`DEFINITION` labels, red borders for incorrect matches, and green cards for correct ones. Earn `10` points per pair, `+5` for each consecutive correct match (up to `+15`), and a `+20` bonus for finishing in 12 moves or fewer. Includes 2 `Hints` per round (reveals one pair but resets the streak), a progress bar, a moves/time/streak HUD, and a best-moves record.
+- **Sliding Puzzle** - Arrange the Lesson 1 concepts in the correct sequence (`Management` -> levels of management from top to bottom -> four functions). Each tile features a numbered step badge that turns green once in the correct position, alongside a side panel showing the current count of correct tiles (`In place: n/8`). Includes move counter, timer, and best-moves record; awards `25` points for solving + a `15`-point bonus if completed in fewer than 45 moves. Features an `Auto Solve` button, but no score is awarded if used.
+- **Team Role Matching** - Read the task or employee role and select the department responsible for handling it (Sales and Marketing, Finance, Operations, Human Resources, Information Technology). Each department has its own logo. Focuses on Organizing, Delegation, and Structure; 8 tasks per round.
+- **Word Scramble** - Type the correct answer for the scrambled word.
+- **Hangman** - Guess the term before running out of tries.
 
 ## Controls
+- Mouse click for menu, cards, tiles, and buttons.
+- Sliding Puzzle: Arrow keys (or `WASD`) to slide tiles into the gap, `R` to shuffle, `Esc` to return to menu.
+- Memory Match: `H` for a hint, `R` for a new round, `Esc` to return to menu.
+- Word Scramble: Type your answer, press `Enter` to submit.
+- Hangman: Click letters or use the keyboard.
+- Menu: `Sound: On/Off` to toggle audio, `Reset Score` to reset high scores to zero.
+- `F11` to toggle fullscreen (even while in-game).
+- Window is resizable; automatically scales the game while preserving the 1000x720 aspect ratio (black bars appear if the screen aspect ratio differs).
+- `Back` button in every game to return to the menu.
 
-- Mouse click para sa menu, cards, tiles at buttons.
-- Sliding Puzzle: arrow keys (o `WASD`) para i-slide ang tile papunta sa gap, `R` para
-  mag-shuffle, `Esc` para bumalik sa menu.
-- Memory Match: `H` para humingi ng hint, `R` para sa bagong round, `Esc` para bumalik sa menu.
-- Word Scramble: type ang sagot, `Enter` para i-submit.
-- Hangman: click ang letters o gamitin ang keyboard.
-- Menu: `Sound: On/Off` para i-toggle ang tunog, `Reset Score` para ibalik sa zero ang score.
-- `F11` para i-toggle ang fullscreen (kahit nasa loob ng laro).
-- Pwedeng i-resize ang window; awtomatikong mina-scale ang laro at nananatili ang 1000x720 aspect ratio (may black bars kung hindi tugma ang hugis ng screen).
-- `Back` button sa bawat laro para bumalik sa menu.
-
-## Magdagdag ng terms
-
-Buksan ang `src/utils/data.py`:
-
+## Adding Terms
+Open `src/utils/data.py`:
 - `MEMORY_PAIRS`: `("Term", "Definition", lesson_number)`
 - `WORDS`: `("ANSWER", "Hint", lesson_number)`
 - `MANAGEMENT_SEQUENCE`: List of 8 concepts for a sliding puzzle (3x3 grid)
@@ -67,7 +48,6 @@ Buksan ang `src/utils/data.py`:
 - `ROLE_TASKS`: `("Task", "Department", lesson_number)`
 
 ## Tests
-
 ```bash
 python -m unittest discover -s tests
 ```
